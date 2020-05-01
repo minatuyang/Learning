@@ -9,6 +9,7 @@ int main(int argc, char* argv[])
 	w.show();
 	return a.exec();
 	int i = 0;
+	i++;
 	Mat image = cv::imread("E:/hallo.jpg");
 	if (image.empty()) {
 		printf("could not load image...\n");
