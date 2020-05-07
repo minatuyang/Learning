@@ -1,8 +1,8 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-
 #include <QWidget>
+#include <QApplication>
 #include <QCamera>
 #include <QCameraViewfinder>
 #include <QCameraImageCapture>
@@ -10,6 +10,12 @@
 #include <QList>
 #include <QDebug>
 #include <QImage>
+#include <QTimer>
+#include <windows.h>
+#include <stdio.h>
+#include <opencv.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/core.hpp>
 #include "ui_QtGuiApplication2.h"
 
 class QtGuiApplication2 : public QMainWindow
@@ -21,6 +27,10 @@ public:
 
 private:
 	Ui::QtGuiApplication2Class ui;
+	QTimer* timer;
+	QImage* imag;
+	CvCapture* cam;// 视频获取结构， 用来作为视频获取函数的一个参数
+	cv::Mat* frame;//申请Mat类型指针，就是申请内存空间来存放每一帧图像
 
 public:
 	~QtGuiApplication2();
