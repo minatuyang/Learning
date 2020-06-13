@@ -6,8 +6,9 @@ QtGuiApplication2::QtGuiApplication2(QWidget* parent)
 	ui.setupUi(this);
 	//ui.label->setScaledContents(true);
 	camera = new QCamera;//摄像头
-	viewfinder = new QCameraViewfinder(ui.label);
+	viewfinder = new QCameraViewfinder(ui.centralWidget);
 	imageCapture = new QCameraImageCapture(camera);//截图部件
+	//ui.label->setScaledContents(true);
 	cam = NULL;
 	timer = new QTimer(this);
 	imag = new QImage();         // 初始化
@@ -42,15 +43,13 @@ void QtGuiApplication2::displayImage(int, QImage image)
 	//image = image.scaled(ui.label->width(), ui.label->height());
 	//ui.label->setPixmap(QPixmap::fromImage(image));
 	//QImage::Format format = image.format();
-
 }
 void QtGuiApplication2::SavePicture()
 {
-	const QPixmap* pixmap = ui.label->pixmap();
-	if (pixmap)
-	{
-		pixmap->save("E:\\hallo.jpg");
-		qDebug() << "保存上了" << endl;
-	}
-
+	//const QPixmap* pixmap = ui.label->pixmap();
+	//if (pixmap)
+	//{
+	//	pixmap->save("E:\\hallo.jpg");
+	//	qDebug() << "保存上了" << endl;
+	//}
 }
